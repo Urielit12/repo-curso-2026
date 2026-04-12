@@ -1,0 +1,864 @@
+﻿**********************
+Inicio de la transcripción de Windows PowerShell
+Hora de inicio: 20260412155311
+Nombre de usuario: DESKTOP-PRCQ08A\lenovo v15
+Usuario RunAs: DESKTOP-PRCQ08A\lenovo v15
+Nombre de la configuración: 
+Máquina: DESKTOP-PRCQ08A (Microsoft Windows NT 10.0.26200.0)
+Aplicación host: C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe
+Id. de proceso: 15184
+PSVersion: 5.1.26100.7920
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.7920
+BuildVersion: 10.0.26100.7920
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+La transcripción ha comenzado. El archivo de salida es tarea01_parte2.txt
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01> #Se me quedo sin bateria la compu, la deje la noche cargando y al volver se detuvo la transcripcion anterior, sigo en esta parte dos.
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01> ls
+
+
+    Directorio: C:\Users\lenovo v15\Documents\CIENCIA DE DATOS
+    UBA\ECON\repo-curso-2026\Tareas\tarea01
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         12/4/2026     04:48                tutorial
+-a----         12/4/2026     00:58              0 tarea01.R
+-a----         12/4/2026     04:57          49223 tarea01.txt
+-a----         12/4/2026     15:53            977 tarea01_parte2.txt
+
+
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01> cd .\tutorial\
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> ls
+
+
+    Directorio: C:\Users\lenovo v15\Documents\CIENCIA DE DATOS
+    UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         12/4/2026     01:19                --help
+d-----         12/4/2026     04:44                dir1
+d-----         12/4/2026     01:19                dir4
+d-----         12/4/2026     01:22                folder 1
+d-----         12/4/2026     01:22                folder 6
+d-----         12/4/2026     01:22                folder 7
+-a----         12/4/2026     04:28            750 combinado.txt
+-a----         12/4/2026     04:28            750 combinado_bak.txt
+-a----         12/4/2026     01:23           2266 output.txt
+-a----         12/4/2026     01:25             24 pruebados.txt
+-a----         12/4/2026     01:26             26 pruebatres.txt
+-a----         12/4/2026     01:25             26 pruebauno.txt
+
+
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> mv combinado.txt,dir4
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> ls
+
+
+    Directorio: C:\Users\lenovo v15\Documents\CIENCIA DE DATOS
+    UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         12/4/2026     01:19                --help
+d-----         12/4/2026     04:44                dir1
+d-----         12/4/2026     01:22                folder 1
+d-----         12/4/2026     01:22                folder 6
+d-----         12/4/2026     01:22                folder 7
+-a----         12/4/2026     04:28            750 combinado.txt
+-a----         12/4/2026     04:28            750 combinado_bak.txt
+-a----         12/4/2026     01:23           2266 output.txt
+-a----         12/4/2026     01:25             24 pruebados.txt
+-a----         12/4/2026     01:26             26 pruebatres.txt
+-a----         12/4/2026     01:25             26 pruebauno.txt
+
+
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> #Me elimina los directorios en vez de mover los txt al directorio, por que? Voy a chequear
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> Get-ChildItem -Path "C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\" -Recurse -Directory -Filter "dir4"
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> cd ..
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01> ls
+
+
+    Directorio: C:\Users\lenovo v15\Documents\CIENCIA DE DATOS
+    UBA\ECON\repo-curso-2026\Tareas\tarea01
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         12/4/2026     15:56                tutorial
+-a----         12/4/2026     00:58              0 tarea01.R
+-a----         12/4/2026     04:57          49223 tarea01.txt
+-a----         12/4/2026     15:56           1559 tarea01_parte2.txt
+
+
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01> cd .\tutorial\
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> ls
+
+
+    Directorio: C:\Users\lenovo v15\Documents\CIENCIA DE DATOS
+    UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         12/4/2026     01:19                --help
+d-----         12/4/2026     04:44                dir1
+d-----         12/4/2026     01:22                folder 1
+d-----         12/4/2026     01:22                folder 6
+d-----         12/4/2026     01:22                folder 7
+-a----         12/4/2026     04:28            750 combinado.txt
+-a----         12/4/2026     04:28            750 combinado_bak.txt
+-a----         12/4/2026     01:23           2266 output.txt
+-a----         12/4/2026     01:25             24 pruebados.txt
+-a----         12/4/2026     01:26             26 pruebatres.txt
+-a----         12/4/2026     01:25             26 pruebauno.txt
+
+
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> mkdir dir2,dir3,dir4
+
+
+    Directorio: C:\Users\lenovo v15\Documents\CIENCIA DE DATOS
+    UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         12/4/2026     16:01                dir2
+d-----         12/4/2026     16:01                dir3
+d-----         12/4/2026     16:01                dir4
+
+
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> ls
+
+
+    Directorio: C:\Users\lenovo v15\Documents\CIENCIA DE DATOS
+    UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         12/4/2026     01:19                --help
+d-----         12/4/2026     04:44                dir1
+d-----         12/4/2026     16:01                dir2
+d-----         12/4/2026     16:01                dir3
+d-----         12/4/2026     16:01                dir4
+d-----         12/4/2026     01:22                folder 1
+d-----         12/4/2026     01:22                folder 6
+d-----         12/4/2026     01:22                folder 7
+-a----         12/4/2026     04:28            750 combinado.txt
+-a----         12/4/2026     04:28            750 combinado_bak.txt
+-a----         12/4/2026     01:23           2266 output.txt
+-a----         12/4/2026     01:25             24 pruebados.txt
+-a----         12/4/2026     01:26             26 pruebatres.txt
+-a----         12/4/2026     01:25             26 pruebauno.txt
+
+
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> mv combinado.txt dir4
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> ls
+
+
+    Directorio: C:\Users\lenovo v15\Documents\CIENCIA DE DATOS
+    UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         12/4/2026     01:19                --help
+d-----         12/4/2026     04:44                dir1
+d-----         12/4/2026     16:01                dir2
+d-----         12/4/2026     16:01                dir3
+d-----         12/4/2026     16:02                dir4
+d-----         12/4/2026     01:22                folder 1
+d-----         12/4/2026     01:22                folder 6
+d-----         12/4/2026     01:22                folder 7
+-a----         12/4/2026     04:28            750 combinado_bak.txt
+-a----         12/4/2026     01:23           2266 output.txt
+-a----         12/4/2026     01:25             24 pruebados.txt
+-a----         12/4/2026     01:26             26 pruebatres.txt
+-a----         12/4/2026     01:25             26 pruebauno.txt
+
+
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> cd dir4
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial\dir4> ls
+
+
+    Directorio: C:\Users\lenovo v15\Documents\CIENCIA DE DATOS
+    UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial\dir4
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         12/4/2026     04:28            750 combinado.txt
+
+
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial\dir4> #El problema eran las comas, se ve que se usa para mkdir, pero no para mv
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial\dir4> ls
+
+
+    Directorio: C:\Users\lenovo v15\Documents\CIENCIA DE DATOS
+    UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial\dir4
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         12/4/2026     04:28            750 combinado.txt
+
+
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial\dir4> cd ..
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> ls
+
+
+    Directorio: C:\Users\lenovo v15\Documents\CIENCIA DE DATOS
+    UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         12/4/2026     01:19                --help
+d-----         12/4/2026     04:44                dir1
+d-----         12/4/2026     16:01                dir2
+d-----         12/4/2026     16:01                dir3
+d-----         12/4/2026     16:02                dir4
+d-----         12/4/2026     01:22                folder 1
+d-----         12/4/2026     01:22                folder 6
+d-----         12/4/2026     01:22                folder 7
+-a----         12/4/2026     04:28            750 combinado_bak.txt
+-a----         12/4/2026     01:23           2266 output.txt
+-a----         12/4/2026     01:25             24 pruebados.txt
+-a----         12/4/2026     01:26             26 pruebatres.txt
+-a----         12/4/2026     01:25             26 pruebauno.txt
+
+
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> cd dir4
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial\dir4> mv combinado.txt ..
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial\dir4> ls
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial\dir4> cd ..
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> ls
+
+
+    Directorio: C:\Users\lenovo v15\Documents\CIENCIA DE DATOS
+    UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         12/4/2026     01:19                --help
+d-----         12/4/2026     04:44                dir1
+d-----         12/4/2026     16:01                dir2
+d-----         12/4/2026     16:01                dir3
+d-----         12/4/2026     16:04                dir4
+d-----         12/4/2026     01:22                folder 1
+d-----         12/4/2026     01:22                folder 6
+d-----         12/4/2026     01:22                folder 7
+-a----         12/4/2026     04:28            750 combinado.txt
+-a----         12/4/2026     04:28            750 combinado_bak.txt
+-a----         12/4/2026     01:23           2266 output.txt
+-a----         12/4/2026     01:25             24 pruebados.txt
+-a----         12/4/2026     01:26             26 pruebatres.txt
+-a----         12/4/2026     01:25             26 pruebauno.txt
+
+
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> mkdir -p dir4/dir5/dir6
+
+
+    Directorio: C:\Users\lenovo v15\Documents\CIENCIA DE DATOS
+    UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial\dir4\dir5
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         12/4/2026     16:05                dir6
+
+
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> ls
+
+
+    Directorio: C:\Users\lenovo v15\Documents\CIENCIA DE DATOS
+    UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         12/4/2026     01:19                --help
+d-----         12/4/2026     04:44                dir1
+d-----         12/4/2026     16:01                dir2
+d-----         12/4/2026     16:01                dir3
+d-----         12/4/2026     16:05                dir4
+d-----         12/4/2026     01:22                folder 1
+d-----         12/4/2026     01:22                folder 6
+d-----         12/4/2026     01:22                folder 7
+-a----         12/4/2026     04:28            750 combinado.txt
+-a----         12/4/2026     04:28            750 combinado_bak.txt
+-a----         12/4/2026     01:23           2266 output.txt
+-a----         12/4/2026     01:25             24 pruebados.txt
+-a----         12/4/2026     01:26             26 pruebatres.txt
+-a----         12/4/2026     01:25             26 pruebauno.txt
+
+
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> cd dir4
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial\dir4> ls
+
+
+    Directorio: C:\Users\lenovo v15\Documents\CIENCIA DE DATOS
+    UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial\dir4
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         12/4/2026     16:05                dir5
+
+
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial\dir4> cd ..
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> ls
+
+
+    Directorio: C:\Users\lenovo v15\Documents\CIENCIA DE DATOS
+    UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         12/4/2026     01:19                --help
+d-----         12/4/2026     04:44                dir1
+d-----         12/4/2026     16:01                dir2
+d-----         12/4/2026     16:01                dir3
+d-----         12/4/2026     16:05                dir4
+d-----         12/4/2026     01:22                folder 1
+d-----         12/4/2026     01:22                folder 6
+d-----         12/4/2026     01:22                folder 7
+-a----         12/4/2026     04:28            750 combinado.txt
+-a----         12/4/2026     04:28            750 combinado_bak.txt
+-a----         12/4/2026     01:23           2266 output.txt
+-a----         12/4/2026     01:25             24 pruebados.txt
+-a----         12/4/2026     01:26             26 pruebatres.txt
+-a----         12/4/2026     01:25             26 pruebauno.txt
+
+
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> #Me habia olvidado de crear el dir4 con el dir5 y 6 dentro al hacerlos denuevo, movi el combinado.txt hacia atras y los cree nuevamente.
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> mv combinado.txt dir2
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> ls
+
+
+    Directorio: C:\Users\lenovo v15\Documents\CIENCIA DE DATOS
+    UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         12/4/2026     01:19                --help
+d-----         12/4/2026     04:44                dir1
+d-----         12/4/2026     16:06                dir2
+d-----         12/4/2026     16:01                dir3
+d-----         12/4/2026     16:05                dir4
+d-----         12/4/2026     01:22                folder 1
+d-----         12/4/2026     01:22                folder 6
+d-----         12/4/2026     01:22                folder 7
+-a----         12/4/2026     04:28            750 combinado_bak.txt
+-a----         12/4/2026     01:23           2266 output.txt
+-a----         12/4/2026     01:25             24 pruebados.txt
+-a----         12/4/2026     01:26             26 pruebatres.txt
+-a----         12/4/2026     01:25             26 pruebauno.txt
+
+
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> mv dir2/combined.txt dir4/dir5/dir6
+mv : No se encuentra la ruta de acceso 'C:\Users\lenovo v15\Documents\CIENCIA DE DATOS 
+UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial\dir2\combined.txt' porque no existe.
+En línea: 1 Carácter: 1
++ mv dir2/combined.txt dir4/dir5/dir6
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Users\lenovo...r2\combined.txt:String) [Move-Item], 
+ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.MoveItemCommand
+mv : No se encuentra la ruta de acceso 'C:\Users\lenovo v15\Documents\CIENCIA DE DATOS
+UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial\dir2\combined.txt' porque no existe.
+En línea: 1 Carácter: 1
++ mv dir2/combined.txt dir4/dir5/dir6
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Users\lenovo...r2\combined.txt:String)
+    [Move-Item], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.MoveItemCommand
+
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> mv dir2/combinado.txt dir4/dir5/dir6
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> cp dir4/dir5/dir6/combinado.txt .
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> ls
+
+
+    Directorio: C:\Users\lenovo v15\Documents\CIENCIA DE DATOS
+    UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         12/4/2026     01:19                --help
+d-----         12/4/2026     04:44                dir1
+d-----         12/4/2026     16:07                dir2
+d-----         12/4/2026     16:01                dir3
+d-----         12/4/2026     16:05                dir4
+d-----         12/4/2026     01:22                folder 1
+d-----         12/4/2026     01:22                folder 6
+d-----         12/4/2026     01:22                folder 7
+-a----         12/4/2026     04:28            750 combinado.txt
+-a----         12/4/2026     04:28            750 combinado_bak.txt
+-a----         12/4/2026     01:23           2266 output.txt
+-a----         12/4/2026     01:25             24 pruebados.txt
+-a----         12/4/2026     01:26             26 pruebatres.txt
+-a----         12/4/2026     01:25             26 pruebauno.txt
+
+
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> ls dir4/dir5/dir6
+
+
+    Directorio: C:\Users\lenovo v15\Documents\CIENCIA DE DATOS
+    UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial\dir4\dir5\dir6
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         12/4/2026     04:28            750 combinado.txt
+
+
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> cp combinado.txt combinado_backup.txt
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> ls
+
+
+    Directorio: C:\Users\lenovo v15\Documents\CIENCIA DE DATOS
+    UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         12/4/2026     01:19                --help
+d-----         12/4/2026     04:44                dir1
+d-----         12/4/2026     16:07                dir2
+d-----         12/4/2026     16:01                dir3
+d-----         12/4/2026     16:05                dir4
+d-----         12/4/2026     01:22                folder 1
+d-----         12/4/2026     01:22                folder 6
+d-----         12/4/2026     01:22                folder 7
+-a----         12/4/2026     04:28            750 combinado.txt
+-a----         12/4/2026     04:28            750 combinado_backup.txt
+-a----         12/4/2026     04:28            750 combinado_bak.txt
+-a----         12/4/2026     01:23           2266 output.txt
+-a----         12/4/2026     01:25             24 pruebados.txt
+-a----         12/4/2026     01:26             26 pruebatres.txt
+-a----         12/4/2026     01:25             26 pruebauno.txt
+
+
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> mv combinado_bak.txt combinado_backup2.txt
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> #Ya que ya habia usado un nombre que los ponia juntos al backup y al original, renombro el backup que cree al principio de la prueba por mi cuenta.
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> ls
+
+
+    Directorio: C:\Users\lenovo v15\Documents\CIENCIA DE DATOS
+    UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         12/4/2026     01:19                --help
+d-----         12/4/2026     04:44                dir1
+d-----         12/4/2026     16:07                dir2
+d-----         12/4/2026     16:01                dir3
+d-----         12/4/2026     16:05                dir4
+d-----         12/4/2026     01:22                folder 1
+d-----         12/4/2026     01:22                folder 6
+d-----         12/4/2026     01:22                folder 7
+-a----         12/4/2026     04:28            750 combinado.txt
+-a----         12/4/2026     04:28            750 combinado_backup.txt
+-a----         12/4/2026     04:28            750 combinado_backup2.txt
+-a----         12/4/2026     01:23           2266 output.txt
+-a----         12/4/2026     01:25             24 pruebados.txt
+-a----         12/4/2026     01:26             26 pruebatres.txt
+-a----         12/4/2026     01:25             26 pruebauno.txt
+
+
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> mv "folder 1" folder_1
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> mv "folder 6" folder_6
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> mv "folder 7" folder_7
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> ls
+
+
+    Directorio: C:\Users\lenovo v15\Documents\CIENCIA DE DATOS
+    UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         12/4/2026     01:19                --help
+d-----         12/4/2026     04:44                dir1
+d-----         12/4/2026     16:07                dir2
+d-----         12/4/2026     16:01                dir3
+d-----         12/4/2026     16:05                dir4
+d-----         12/4/2026     01:22                folder_1
+d-----         12/4/2026     01:22                folder_6
+d-----         12/4/2026     01:22                folder_7
+-a----         12/4/2026     04:28            750 combinado.txt
+-a----         12/4/2026     04:28            750 combinado_backup.txt
+-a----         12/4/2026     04:28            750 combinado_backup2.txt
+-a----         12/4/2026     01:23           2266 output.txt
+-a----         12/4/2026     01:25             24 pruebados.txt
+-a----         12/4/2026     01:26             26 pruebatres.txt
+-a----         12/4/2026     01:25             26 pruebauno.txt
+
+
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> rm dir4/dir5/dir6/combinado.txt combinado_backup.txt
+>> ErrorTerminación(Remove-Item): "No se encuentra ningún parámetro de posición que acepte el argumento 'combinado_backup.txt'."
+Remove-Item : No se encuentra ningún parámetro de posición que acepte el argumento 'combinado_backup.txt'.
+En línea: 1 Carácter: 1
++ rm dir4/dir5/dir6/combinado.txt combinado_backup.txt
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Remove-Item], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.RemoveItemCommand
+Remove-Item : No se encuentra ningún parámetro de posición que acepte el argumento
+'combinado_backup.txt'.
+En línea: 1 Carácter: 1
++ rm dir4/dir5/dir6/combinado.txt combinado_backup.txt
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Remove-Item], ParameterBindingExcept
+   ion
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.
+   RemoveItemCommand
+
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> ls
+
+
+    Directorio: C:\Users\lenovo v15\Documents\CIENCIA DE DATOS
+    UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         12/4/2026     01:19                --help
+d-----         12/4/2026     04:44                dir1
+d-----         12/4/2026     16:07                dir2
+d-----         12/4/2026     16:01                dir3
+d-----         12/4/2026     16:05                dir4
+d-----         12/4/2026     01:22                folder_1
+d-----         12/4/2026     01:22                folder_6
+d-----         12/4/2026     01:22                folder_7
+-a----         12/4/2026     04:28            750 combinado.txt
+-a----         12/4/2026     04:28            750 combinado_backup.txt
+-a----         12/4/2026     04:28            750 combinado_backup2.txt
+-a----         12/4/2026     01:23           2266 output.txt
+-a----         12/4/2026     01:25             24 pruebados.txt
+-a----         12/4/2026     01:26             26 pruebatres.txt
+-a----         12/4/2026     01:25             26 pruebauno.txt
+
+
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> rm dir4/dir5/dir6/combinado.txt,combinado_backup.txt
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> ls
+
+
+    Directorio: C:\Users\lenovo v15\Documents\CIENCIA DE DATOS
+    UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         12/4/2026     01:19                --help
+d-----         12/4/2026     04:44                dir1
+d-----         12/4/2026     16:07                dir2
+d-----         12/4/2026     16:01                dir3
+d-----         12/4/2026     16:05                dir4
+d-----         12/4/2026     01:22                folder_1
+d-----         12/4/2026     01:22                folder_6
+d-----         12/4/2026     01:22                folder_7
+-a----         12/4/2026     04:28            750 combinado.txt
+-a----         12/4/2026     04:28            750 combinado_backup2.txt
+-a----         12/4/2026     01:23           2266 output.txt
+-a----         12/4/2026     01:25             24 pruebados.txt
+-a----         12/4/2026     01:26             26 pruebatres.txt
+-a----         12/4/2026     01:25             26 pruebauno.txt
+
+
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> ls dir4/dir5/dir6
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> rm folder_*
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> ls
+
+
+    Directorio: C:\Users\lenovo v15\Documents\CIENCIA DE DATOS
+    UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         12/4/2026     01:19                --help
+d-----         12/4/2026     04:44                dir1
+d-----         12/4/2026     16:07                dir2
+d-----         12/4/2026     16:01                dir3
+d-----         12/4/2026     16:05                dir4
+-a----         12/4/2026     04:28            750 combinado.txt
+-a----         12/4/2026     04:28            750 combinado_backup2.txt
+-a----         12/4/2026     01:23           2266 output.txt
+-a----         12/4/2026     01:25             24 pruebados.txt
+-a----         12/4/2026     01:26             26 pruebatres.txt
+-a----         12/4/2026     01:25             26 pruebauno.txt
+
+
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> #No aparece el safety net del que habla en el tutorial, solo elimina los directorios.
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> mkdir folder_1/folder_2
+
+
+    Directorio: C:\Users\lenovo v15\Documents\CIENCIA DE DATOS
+    UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial\folder_1
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         12/4/2026     16:18                folder_2
+
+
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> ls folder_1
+
+
+    Directorio: C:\Users\lenovo v15\Documents\CIENCIA DE DATOS
+    UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial\folder_1
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         12/4/2026     16:18                folder_2
+
+
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> rmdir folder_*
+Confirmar
+El elemento situado en C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial\folder_1 tiene elementos secundarios y no se especificó el parámetro Recurse. Si continúa, se quitarán todos los secundarios junto con el elemento. ¿Está seguro de que desea continuar?
+&Sí  Sí a t&odo  &No  No a &todo  S&uspender
+S
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> ls
+
+
+    Directorio: C:\Users\lenovo v15\Documents\CIENCIA DE DATOS
+    UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         12/4/2026     01:19                --help
+d-----         12/4/2026     04:44                dir1
+d-----         12/4/2026     16:07                dir2
+d-----         12/4/2026     16:01                dir3
+d-----         12/4/2026     16:05                dir4
+-a----         12/4/2026     04:28            750 combinado.txt
+-a----         12/4/2026     04:28            750 combinado_backup2.txt
+-a----         12/4/2026     01:23           2266 output.txt
+-a----         12/4/2026     01:25             24 pruebados.txt
+-a----         12/4/2026     01:26             26 pruebatres.txt
+-a----         12/4/2026     01:25             26 pruebauno.txt
+
+
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> wc -l combinado.txt
+wc : El término 'wc' no se reconoce como nombre de un cmdlet, función, archivo de script o programa ejecutable. 
+Compruebe si escribió correctamente el nombre o, si incluyó una ruta de acceso, compruebe que dicha ruta es correcta e 
+inténtelo de nuevo.
+En línea: 1 Carácter: 1
++ wc -l combinado.txt
++ ~~
+    + CategoryInfo          : ObjectNotFound: (wc:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+wc : El término 'wc' no se reconoce como nombre de un cmdlet, función, archivo de script
+o programa ejecutable. Compruebe si escribió correctamente el nombre o, si incluyó una
+ruta de acceso, compruebe que dicha ruta es correcta e inténtelo de nuevo.
+En línea: 1 Carácter: 1
++ wc -l combinado.txt
++ ~~
+    + CategoryInfo          : ObjectNotFound: (wc:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> wc -l combinado.txt
+wc : El término 'wc' no se reconoce como nombre de un cmdlet, función, archivo de script o programa ejecutable. 
+Compruebe si escribió correctamente el nombre o, si incluyó una ruta de acceso, compruebe que dicha ruta es correcta e 
+inténtelo de nuevo.
+En línea: 1 Carácter: 1
++ wc -l combinado.txt
++ ~~
+    + CategoryInfo          : ObjectNotFound: (wc:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+wc : El término 'wc' no se reconoce como nombre de un cmdlet, función, archivo de script
+o programa ejecutable. Compruebe si escribió correctamente el nombre o, si incluyó una
+ruta de acceso, compruebe que dicha ruta es correcta e inténtelo de nuevo.
+En línea: 1 Carácter: 1
++ wc -l combinado.txt
++ ~~
+    + CategoryInfo          : ObjectNotFound: (wc:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> cat combinado.txt | measure -line
+
+Lines Words Characters Property
+----- ----- ---------- --------
+   31
+
+
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> #Busque una alternativa porque wc no funciona en powershell
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> ls ~ > file_list.txt
+>> EnlaceDeParámetros(Out-File): nombre="InputObject"; valor=".copilot"
+>> EnlaceDeParámetros(Out-File): nombre="InputObject"; valor=".ipython"
+>> EnlaceDeParámetros(Out-File): nombre="InputObject"; valor=".matplotlib"
+>> EnlaceDeParámetros(Out-File): nombre="InputObject"; valor=".ssh"
+>> EnlaceDeParámetros(Out-File): nombre="InputObject"; valor=".vscode"
+>> EnlaceDeParámetros(Out-File): nombre="InputObject"; valor="Contacts"
+>> EnlaceDeParámetros(Out-File): nombre="InputObject"; valor="Desktop"
+>> EnlaceDeParámetros(Out-File): nombre="InputObject"; valor="Documents"
+>> EnlaceDeParámetros(Out-File): nombre="InputObject"; valor="Downloads"
+>> EnlaceDeParámetros(Out-File): nombre="InputObject"; valor="Favorites"
+>> EnlaceDeParámetros(Out-File): nombre="InputObject"; valor="Links"
+>> EnlaceDeParámetros(Out-File): nombre="InputObject"; valor="Music"
+>> EnlaceDeParámetros(Out-File): nombre="InputObject"; valor="OneDrive"
+>> EnlaceDeParámetros(Out-File): nombre="InputObject"; valor="Pictures"
+>> EnlaceDeParámetros(Out-File): nombre="InputObject"; valor="prueba"
+>> EnlaceDeParámetros(Out-File): nombre="InputObject"; valor="Saved Games"
+>> EnlaceDeParámetros(Out-File): nombre="InputObject"; valor="Searches"
+>> EnlaceDeParámetros(Out-File): nombre="InputObject"; valor="Videos"
+>> EnlaceDeParámetros(Out-File): nombre="InputObject"; valor=".gitconfig"
+>> EnlaceDeParámetros(Out-File): nombre="InputObject"; valor=".lesshst"
+>> EnlaceDeParámetros(Out-File): nombre="InputObject"; valor=".python_history"
+>> EnlaceDeParámetros(Out-File): nombre="InputObject"; valor="Sti_Trace.log"
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> wc -l file_list.txt
+wc : El término 'wc' no se reconoce como nombre de un cmdlet, función, archivo de script o programa ejecutable. 
+Compruebe si escribió correctamente el nombre o, si incluyó una ruta de acceso, compruebe que dicha ruta es correcta e 
+inténtelo de nuevo.
+En línea: 1 Carácter: 1
++ wc -l file_list.txt
++ ~~
+    + CategoryInfo          : ObjectNotFound: (wc:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+wc : El término 'wc' no se reconoce como nombre de un cmdlet, función, archivo de script
+o programa ejecutable. Compruebe si escribió correctamente el nombre o, si incluyó una
+ruta de acceso, compruebe que dicha ruta es correcta e inténtelo de nuevo.
+En línea: 1 Carácter: 1
++ wc -l file_list.txt
++ ~~
+    + CategoryInfo          : ObjectNotFound: (wc:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> cat file_list.txt | measure -line
+
+Lines Words Characters Property
+----- ----- ---------- --------
+   25
+
+
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> rm file_list.txt
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> ls ~ | measure
+
+
+Count    : 22
+Average  :
+Sum      :
+Maximum  :
+Minimum  :
+Property :
+
+
+
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> ls /etc| measure
+ls : No se encuentra la ruta de acceso 'C:\etc' porque no existe.
+En línea: 1 Carácter: 1
++ ls /etc| measure
++ ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\etc:String) [Get-ChildItem], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand
+ls : No se encuentra la ruta de acceso 'C:\etc' porque no existe.
+En línea: 1 Carácter: 1
++ ls /etc| measure
++ ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\etc:String) [Get-ChildItem], ItemNotFo
+   undException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetChildItemCom
+   mand
+
+
+
+Count    : 0
+Average  :
+Sum      :
+Maximum  :
+Minimum  :
+Property :
+
+
+
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> ls ~ | less
+less : El término 'less' no se reconoce como nombre de un cmdlet, función, archivo de script o programa ejecutable. 
+Compruebe si escribió correctamente el nombre o, si incluyó una ruta de acceso, compruebe que dicha ruta es correcta e 
+inténtelo de nuevo.
+En línea: 1 Carácter: 8
++ ls ~ | less
++        ~~~~
+    + CategoryInfo          : ObjectNotFound: (less:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+less : El término 'less' no se reconoce como nombre de un cmdlet, función, archivo de
+script o programa ejecutable. Compruebe si escribió correctamente el nombre o, si
+incluyó una ruta de acceso, compruebe que dicha ruta es correcta e inténtelo de nuevo.
+En línea: 1 Carácter: 8
++ ls ~ | less
++        ~~~~
+    + CategoryInfo          : ObjectNotFound: (less:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> ls ~ | more
+
+    Directorio: C:\Users\lenovo v15
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         25/3/2026     22:00                .copilot
+d-----         21/3/2025     17:29                .ipython
+d-----         28/3/2025     18:00                .matplotlib
+d-----          9/4/2026     23:33                .ssh
+d-----         21/3/2025     15:06                .vscode
+d-r---        16/10/2025     01:37                Contacts
+d-r---         31/3/2026     10:54                Desktop
+d-r---          9/4/2026     23:38                Documents
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> cat combined.txt | uniq | measure
+uniq : El término 'uniq' no se reconoce como nombre de un cmdlet, función, archivo de script o programa ejecutable. 
+Compruebe si escribió correctamente el nombre o, si incluyó una ruta de acceso, compruebe que dicha ruta es correcta e 
+inténtelo de nuevo.
+En línea: 1 Carácter: 20
++ cat combined.txt | uniq | measure
++                    ~~~~
+    + CategoryInfo          : ObjectNotFound: (uniq:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+uniq : El término 'uniq' no se reconoce como nombre de un cmdlet, función, archivo de
+script o programa ejecutable. Compruebe si escribió correctamente el nombre o, si
+incluyó una ruta de acceso, compruebe que dicha ruta es correcta e inténtelo de nuevo.
+En línea: 1 Carácter: 20
++ cat combined.txt | uniq | measure
++                    ~~~~
+    + CategoryInfo          : ObjectNotFound: (uniq:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> cat combinado.txt | select -unique | measure -line
+
+Lines Words Characters Property
+----- ----- ---------- --------
+    4
+
+
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> cat combinado.txt | select -unique | more
+﻿﻿pruebados
+pruebatres
+Prueba uno
+Concatene una linea :)
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> sort combinado.txt | more
+
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> cat combinado.txt | select -unique | more
+﻿﻿pruebados
+pruebatres
+Prueba uno
+Concatene una linea :)
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> #Fin de Tarea 1
+PS C:\Users\lenovo v15\Documents\CIENCIA DE DATOS UBA\ECON\repo-curso-2026\Tareas\tarea01\tutorial> Stop-Transcript
+**********************
+Fin de la transcripción de Windows PowerShell
+Hora de finalización: 20260412170127
+**********************
