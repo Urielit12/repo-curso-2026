@@ -17,7 +17,6 @@ flights |>
 
 
 planes |>
-  filter(model == "EMB-145XR") |> 
   group_by(year, engine, seats)
   
 
