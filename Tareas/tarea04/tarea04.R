@@ -214,7 +214,7 @@ df |>
 #Mantiene todas las filas y agrega columna con el promedio por grupo.
 
 
-#JOINS
+#KEYS
 
 #EJERCICIO 1
 #La relación faltante es entre weather y airports, conectando weather.origin-
@@ -232,3 +232,124 @@ df |>
 #Se modela como una tabla con clave primaria date, Relacionada con flights- 
 #mediante la fecha derivada de sus variables del tiempo.
 
+#Ejercicio 5:
+#People → Managers → AwardsManagers
+
+#People → Batting
+#People → Salaries
+
+#La relación entre Batting, Pitching y Fielding es muchos a muchos indirecta-
+#porque todas contienen múltiples observaciones por jugador y se conectan a-
+#través de playerID, pero no directamente entre sí.
+
+
+
+
+#BASIC JOINS
+flights2 <- flights |> 
+  select(year, time_hour, origin, dest, tailnum, carrier)
+flights2
+#Ejercicio 1
+
+top_48_hours <-
+  flights |>
+  group_by(time_hour) |>
+  summarise(avg_delay = mean(dep_delay, na.rm = TRUE)) |>
+  arrange(desc(avg_delay)) |>
+  slice_head(n = 48)
+
+result <-
+  top_48_hours |>
+  left_join(weather, by = "time_hour")
+
+result
+
+#Ejercicio 2
+top_dest <- flights2 |>
+  count(dest, sort = TRUE) |>
+  head(10)
+top_dest
+#Se deberia hacer de la siguiente manera:
+flights2 |>
+  semi_join(top_dest, join_by(dest))
+
+#Ejercicio 3
+flights2 |>
+  anti_join(weather, join_by(origin, time_hour))
+#No, no todos los vuelos tienen datos en weather para su correspondiente horario.
+
+#Ejercicio 4
+flights2 |>
+  anti_join(planes, join_by(tailnum)) |>
+  count(carrier, sort = TRUE)
+#Aproximadamente el 90% de los casos se explican por una única aerolínea-
+#(carrier), lo que sugiere un problema de cobertura o falta de datos para ese-
+#operador en el dataset planes
+
+#Ejercicio 5
+planes_carriers <-
+  flights2 |>
+  distinct(tailnum, carrier) |>
+  group_by(tailnum) |>
+  summarise(carriers = list(carrier))
+
+planes_extended <-
+  planes |>
+  left_join(planes_carriers, join_by(tailnum))
+
+planes_extended
+
+flights2 |>
+  distinct(tailnum, carrier) |>
+  count(tailnum) |>
+  filter(n > 1)
+#No todos los aviones estan asociados a una aerolinea, hay 17 casos que demuestran-
+#lo contrario, y 7 que tienen valor NA.
+
+#Ejercicio 6
+flights2 |>
+  left_join(airports, join_by(origin == faa)) |>
+  rename(lat_origin = lat, lon_origin = lon) |>
+  left_join(airports, join_by(dest == faa)) |>
+  rename(lat_dest = lat, lon_dest = lon)
+#Agrego las coordenadas realizando dos joins con la tabla airports, uno para
+#origin y otro para dest, y luego renombro las columnas
+
+#Ejercicio 7
+avg_delay_dest <-
+  flights |>
+  group_by(dest) |>
+  summarise(avg_delay = mean(arr_delay, na.rm = TRUE))
+names(flights2)
+
+map_data <-
+  avg_delay_dest |>
+  left_join(airports, join_by(dest == faa))
+
+map_data |>
+  ggplot(aes(x = lon, y = lat)) +
+  borders("state") +
+  geom_point(aes(size = avg_delay, color = avg_delay)) +
+  coord_quickmap()
+#El tamaño o color de los puntos refleja el nivel de retraso promedio en el mapa-
+#De Estados Unidos, debido a la densidad de puntos, conviene hacer zoom en ciertas-
+#zonas.
+
+#Ejercicio 8
+delays_june13 <-
+  flights |>
+  filter(year == 2013, month == 6, day == 13) |>
+  group_by(dest) |>
+  summarise(avg_delay = mean(arr_delay, na.rm = TRUE))
+
+map_data <-
+  delays_june13 |>
+  left_join(airports, join_by(dest == faa))
+
+map_data |>
+  ggplot(aes(x = lon, y = lat)) +
+  borders("state") +
+  geom_point(aes(size = avg_delay, color = avg_delay)) +
+  coord_quickmap()
+#Ese día hubo tormentas severas en gran parte del este de EE.UU, lo que explica
+#el aumento de delays en múltiples aeropuertos.
